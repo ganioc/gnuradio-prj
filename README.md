@@ -143,6 +143,7 @@ Block paths:  /usr/share/gnuradio/grc/blocks
   - throttle, 使输出不会超过sample_rate,flow control,
   - Python Block,就是embedded python block,
   - Virtual Sink,
+  - Vector source,
 - Instrumentation
   - QT
     - QT GUI Frequency Sink, 频域,
@@ -165,7 +166,8 @@ Block paths:  /usr/share/gnuradio/grc/blocks
 - Math Operation
   - multiply const, 与常数相乘
   - add const,
-
+- Filter
+  - Low pass filter
 
 
 
@@ -211,6 +213,7 @@ OOT, Out-of-tree, module, 可以在flowgraph里安装使用。
     np.complex64就是GNU Radio Complex Float 32,
 
 ### Python Block with Vectors,
+
 stream, input, output, 可以用port number, sample index来索引。input_items[portIndex][sampleIndex]
 input_items[portIndex][vectorIndex][sampleIndex]
 
@@ -218,6 +221,7 @@ virtual sink, virtual source, 似乎是连接在一起的
 注意tab, space的问题,
 
 ### Python Block Message Passing,
+
 Messages是一种异步的方式，在模块间发送信息的。用于传送控制信息，保持状态，提供某种形式的非数据的反馈信息。
 
 消息的几个特性:
@@ -229,6 +233,7 @@ Messages是一种异步的方式，在模块间发送信息的。用于传送控
 根据接收到的消息，改变work()函数里面的模块的行为;
 
 ### Python Block Tags
+
 检测input signal crosses the threshold, 写一个tag, 在另一个模块读取这个tag, 更新输出，tag发生的时间, last detection,
 
 用于在采样信号上加标签tag, 同步的方式。当下行的模块需要知道接收机将哪些样本调到了新频率，或者在某些采样上附加timestamp.
@@ -238,6 +243,21 @@ Messages是一种异步的方式，在模块间发送信息的。用于传送控
 absolute index,
 relative index,
 
+### DSP Blocks,
+
+LPF block,
+Impulse Response of a Filter,
+
+Frequency Xlating FIR Filter, 
+
+
+## Use with HackRF
+
+### As a signal generator
+
+
+
+### As a spectrum analyzer
 
 
 
