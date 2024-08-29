@@ -159,6 +159,7 @@ Block paths:  /usr/share/gnuradio/grc/blocks
 - Stream Operators
   - Stream to vector
   - Repeat, 
+  - Endian Swap,
 - Variable
   - parameter, 
 - Message Tools
@@ -168,9 +169,13 @@ Block paths:  /usr/share/gnuradio/grc/blocks
   - add const,
 - Filter
   - Low pass filter
-
-
-
+- File Operations
+  - File Sink, 存文件,
+  - File Source, 读文件, 
+- Soapy
+  - RTL SDR,
+  - B200/B205mini Receiver,
+  - HackRF One,
 
 #### Python Variables in GRC
 
@@ -250,14 +255,83 @@ Impulse Response of a Filter,
 
 Frequency Xlating FIR Filter, 
 
+Sample Rate Change,
+
+Frequency Shift,
+
+读写二进制文件,
+  两种格式为， 32bit float, 16bit int,整数， 
+  实数采样,
+  复数采样，I,Q,I,Q,I,Q,I,Q ...
+
+大小端问题， 
+import block, import python 库,
+
 
 ## Use with HackRF
+
+```shell
+$ hackrf_info
+hackrf_info version: unknown
+libhackrf version: unknown (0.5)
+Found HackRF
+Index: 0
+Serial number: 0000000000000000909862dc2744c0cf
+Board ID Number: 2 (HackRF One)
+Firmware Version: local-79baef7 (API:1.03)
+Part ID Number: 0xa000cb3c 0x006a4f69
+
+HackRF, 20MHz 采样速率,8-bit, 
+
+```
+
+RTL-SDR,Nano, Mini
+
+- FM receiver
+- spectral viewing
+- decode the ID of nearby BS station
+
+#### Install Pybombs for gnuradio
+
+```shell
+pip3 install pybombs
+$ pybombs auto-config
+
+```
 
 ### As a signal generator
 
 
 
 ### As a spectrum analyzer
+
+ValueError: source: Unsupported sample rate (2048000.000000).  Rate must be in the range 
+1000000.000000, 
+2000000.000000, 
+3000000.000000, 
+4000000.000000, 
+5000000.000000, 
+6000000.000000, 
+7000000.000000, 
+8000000.000000, 
+9000000.000000, 
+10000000.000000, 
+11000000.000000, 
+12000000.000000, 
+13000000.000000, 
+14000000.000000, 
+15000000.000000, 
+16000000.000000, 
+17000000.000000, 
+18000000.000000, 
+19000000.000000, 
+20000000.000000
+
+初级的算是学好了。
+
+Soapy HackRF Source, HackRF 就选Complex float就可以了。
+不管HackRF的ADC采样速率，采样bit是多少？
+
 
 
 
