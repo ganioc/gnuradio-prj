@@ -330,7 +330,7 @@ ValueError: source: Unsupported sample rate (2048000.000000).  Rate must be in t
 初级的算是学好了。
 
 Soapy HackRF Source, HackRF 就选Complex float就可以了。
-不管HackRF的ADC采样速率，采样bit是多少？
+不管HackRF的ADC采样速率，采样bit是多少？似乎已经可以使用了。
 
 
 
