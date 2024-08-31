@@ -144,6 +144,8 @@ Block paths:  /usr/share/gnuradio/grc/blocks
   - Python Block,就是embedded python block,
   - Virtual Sink,
   - Vector source,
+  - Python block,
+  - Vector source,
 - Instrumentation
   - QT
     - QT GUI Frequency Sink, 频域,
@@ -160,6 +162,7 @@ Block paths:  /usr/share/gnuradio/grc/blocks
   - Stream to vector
   - Repeat, 
   - Endian Swap,
+  - Keep 1 in N,
 - Variable
   - parameter, 
 - Message Tools
@@ -176,6 +179,11 @@ Block paths:  /usr/share/gnuradio/grc/blocks
   - RTL SDR,
   - B200/B205mini Receiver,
   - HackRF One,
+- Debug tools,
+  - Vector source,
+  - Tags Strobe,
+  - 
+  - 
 
 #### Python Variables in GRC
 
